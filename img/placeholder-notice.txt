@@ -1,0 +1,35 @@
+PLACEHOLDER IMAGES REQUIRED
+
+You will need to add the following placeholder images to make the website display properly:
+
+1. img/logo.png - Company logo image (recommended size: 200x200px, with transparent background)
+
+2. img/hero-bg.jpg - Hero section background image (recommended size: 1920x1080px)
+
+3. img/about-us.jpg - Image for About Us page (recommended size: 800x600px)
+
+4. Service images:
+   - img/ict-solutions.jpg (recommended size: 600x400px)
+   - img/agribusiness.jpg (recommended size: 600x400px)
+   - img/general-supply.jpg (recommended size: 600x400px)
+   - img/agricultural-products.jpg (recommended size: 600x400px)
+   - img/consultancy.jpg (recommended size: 600x400px)
+
+5. img/map-placeholder.jpg - Placeholder for map on contact page (recommended size: 1200x400px)
+
+6. Gallery images:
+   - img/gallery/agriculture-1.jpg
+   - img/gallery/agriculture-2.jpg
+   - img/gallery/agriculture-3.jpg
+   - img/gallery/ict-1.jpg
+   - img/gallery/ict-2.jpg
+   - img/gallery/ict-3.jpg
+   - img/gallery/office-1.jpg
+   - img/gallery/office-2.jpg
+   - img/gallery/clients-1.jpg
+   - img/gallery/clients-2.jpg
+   - img/gallery/clients-3.jpg
+   
+All gallery images should be of similar dimensions (recommended size: 600x400px) for consistency.
+
+You can use stock images from sites like Unsplash (https://unsplash.com/) or Pexels (https://www.pexels.com/) until you have actual company images. 
