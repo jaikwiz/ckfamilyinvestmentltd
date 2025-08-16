@@ -44,10 +44,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Form Validation (if on contact page)
+    // Form Validation and EmailJS (if on contact page)
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
+        // Initialize EmailJS
+        emailjs.init("fAJCWuxEjLRuSHxvX"); // Replace with your actual EmailJS public key
+        
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -82,13 +85,44 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             if (isValid) {
-                // Normally would submit to server, but for demo just show success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'success-message';
-                successMessage.textContent = 'Your message has been sent successfully! We will contact you soon.';
+                // Show loading state
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
                 
-                contactForm.innerHTML = '';
-                contactForm.appendChild(successMessage);
+                // Prepare email parameters
+                const templateParams = {
+                    from_name: name.value.trim(),
+                    from_email: email.value.trim(),
+                    message: message.value.trim(),
+                    to_email: 'contact@ckgroup.co.tz'
+                };
+                
+                // Send email using EmailJS
+                emailjs.send('service_7ytas81', 'template_ih7j5o9', templateParams)
+                    .then(function(response) {
+                        // Success
+                        const successMessage = document.createElement('div');
+                        successMessage.className = 'success-message';
+                        successMessage.innerHTML = '<i class="fas fa-check-circle"></i><h3>Message Sent Successfully!</h3><p>Thank you for contacting us. We will get back to you soon.</p>';
+                        
+                        contactForm.innerHTML = '';
+                        contactForm.appendChild(successMessage);
+                    }, function(error) {
+                        // Error
+                        const errorMessage = document.createElement('div');
+                        errorMessage.className = 'error-message';
+                        errorMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i><h3>Message Failed to Send</h3><p>Sorry, there was an error sending your message. Please try again or contact us directly.</p>';
+                        
+                        contactForm.innerHTML = '';
+                        contactForm.appendChild(errorMessage);
+                        
+                        // Reset form
+                        setTimeout(() => {
+                            location.reload();
+                        }, 3000);
+                    });
             }
         });
     }
