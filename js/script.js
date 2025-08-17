@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     from_name: name.value.trim(),
                     from_email: email.value.trim(),
                     message: message.value.trim(),
-                    to_email: 'contact@ckgroup.co.tz'
+                    to_email: 'youngjwizzy@gmail.com'
                 };
                 
                 // Send email using EmailJS
