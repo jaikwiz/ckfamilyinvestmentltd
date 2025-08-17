@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
                 
                 // Send email using EmailJS
-                emailjs.send('service_uqy5kwf', 'template_ih7j5o9', templateParams)
+                emailjs.send('service_3ex5ae5', 'template_1l48i6g', templateParams)
                     .then(function(response) {
                         // Success
                         const successMessage = document.createElement('div');
