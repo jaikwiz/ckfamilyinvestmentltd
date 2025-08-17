@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const templateParams = {
                     from_name: name.value.trim(),
                     from_email: email.value.trim(),
+                    from_phone: phone.value.trim(),
                     message: message.value.trim(),
                     to_email: 'youngjwizzy@gmail.com'
                 };
